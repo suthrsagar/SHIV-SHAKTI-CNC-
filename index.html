@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="red">
+    <title>शिव शक्ति सीएनसी डिजाइनर सिणधरी</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo1.PNG" type="image/x-icon">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding-top: 60px;
+            background: linear-gradient(270deg, #c4a3a4, #fad0c4, #c57780 , #ff9a9e, #7f659e, #b9a2a5);
+            background-size: 600% 600%;
+            animation: gradientBG 5s  infinite;
+            
+            padding-top: 60px;
+            margin: 0;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 20%;
+            }
+
+            20% {
+                background-position: 20% 50%;
+            }
+
+            50% {
+                background-position: 50% 70%;
+            }
+            70% {
+                background-position: 70% 100%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #333, #555);
+            color: white;
+            padding: 20px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #333;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('banner.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h1, .hero p, .hero button {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            
+            padding: 10px;
+            border-radius: 5px;
+            color: red;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        contact-info {
+            text-align: center;
+            line-height: 1.8;
+            color: #555; 
+            
+        }
+     strong, p, .sagar {
+            text-decoration: none;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">शिव शक्ति CNC</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+             
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>शिव शक्ति सीएनसी डिजाइनर सिणधरी</h1>
+        <p>हम आपके सपनों को हकीकत में बदलने के लिए उच्च गुणवत्ता वाली CNC सेवाएँ प्रदान करते हैं।</p>
+        <button onclick="location.href='services.html'">हमारी सेवाएँ देखें</button>
+        <div class="contact-info">
+            <p><strong>दुकान का नाम:</strong> शिव शक्ति सीएनसी डिजाइनर सिणधरी</p>
+            <p><strong>पता:</strong> सिणधरी,  राजस्थान, भारत</p>
+            <p><strong>मोबाइल:</strong> <a class="sagar" href="tel:+919636957746"> 9636957746</a></p>
+            <p><strong>Email:</strong> <a  class="sagar" href="mailto:info@shivshakticnc.com">  sutharsagar710@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 शिव शक्ति सीएनसी डिजायनर सिणधरी | सभी अधिकार सुरक्षित
+    </footer>
+</body>
+
+</html>
+
+   

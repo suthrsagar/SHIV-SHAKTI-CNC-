@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <title>About - शिव शक्ति सीएनसी डिजायनर सिणधरी</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo1.PNG" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            
+            padding-top: 60px;
+            margin: 0;
+            background: linear-gradient(270deg, #da7e81, #fad0c4, #c57780 , #ff9a9e, #a37bd1, #ffdde1);
+            background-size: 600% 600%;
+            animation: gradientBG 5s  infinite;
+            
+            padding-top: 60px;
+            margin: 0;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 20%;
+            }
+
+            20% {
+                background-position: 20% 50%;
+            }
+
+            50% {
+                background-position: 50% 70%;
+            }
+            70% {
+                background-position: 70% 100%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .about-image img {
+           height: 500px;
+           width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .about-text h2 {
+            color: #222;
+            margin-top: 20px;
+        }
+
+        /* Sticky Header Styles */
+        header {
+            background: linear-gradient(to right, #333, #555);
+            color: white;
+            padding: 20px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            padding: 5px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+            animation: textColorChange 5s infinite alternate;
+        }
+
+        
+        nav ul li a:hover {
+            background-color: white;
+            color: #333;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .logo {
+                display: none;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image img {
+               
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">शिव शक्ति CNC</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>शिव शक्ति सीएनसी डिजायनर सिणधरी</h2>
+                <p>शिव शक्ति सीएनसी डिजायनर सिणधरी, एक अग्रणी CNC डिज़ाइन और कस्टमाइजेशन सर्विस प्रदाता है। हम आपके उद्योग के लिए उच्च गुणवत्ता वाले डिज़ाइनों और उत्पादों का निर्माण करते हैं।</p>
+                <p>हमारे ग्राहक की संतुष्टि हमारे लिए सबसे महत्वपूर्ण है, और हम हर परियोजना पर व्यक्तिगत ध्यान देते हैं।</p>
+                <p>हमारी टीम अत्याधुनिक CNC मशीनिंग तकनीकों का उपयोग करती है, जिससे हर डिज़ाइन में सटीकता और उत्कृष्टता बनी रहती है।</p>
+                <p>हम विभिन्न प्रकार की सेवाएँ प्रदान करते हैं जैसे कि वुड CNC कटिंग, मेटल CNC डिज़ाइनिंग, 3D CNC पैटर्न, और कस्टम CNC आर्टवर्क। हमारे ग्राहक विभिन्न उद्योगों से हैं, जिनमें इंटीरियर डिज़ाइन, फर्नीचर निर्माण, आर्ट और क्राफ्ट, और औद्योगिक उपकरण निर्माण शामिल हैं।</p>
+                <p>हमारा उद्देश्य सिर्फ सुंदर डिज़ाइन बनाना नहीं है, बल्कि उन्हें टिकाऊ और कार्यक्षम बनाना भी है। हर प्रोजेक्ट में हम उच्चतम गुणवत्ता सुनिश्चित करने के लिए बारीकी से निरीक्षण करते हैं।</p>
+                <p>यदि आप अपने प्रोजेक्ट के लिए बेहतरीन CNC डिज़ाइन और कटिंग सेवाओं की तलाश में हैं, तो <b>शिव शक्ति सीएनसी डिजायनर सिणधरी</b> आपका सही विकल्प है।</p>
+            </div>
+            <div class="about-image">
+                <img src="a1.jpg" alt="About Shiv Shakti CNC">
+                <img src="b1.jpg" alt="About Shiv Shakti CNC">
+                <img src="c1.jpg" alt="About Shiv Shakti CNC">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
