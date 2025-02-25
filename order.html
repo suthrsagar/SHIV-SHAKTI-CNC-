@@ -39,11 +39,31 @@
             font-weight: bold;
         }
 
-        input, textarea {
+        input, select, textarea {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
+        }
+
+        .design-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .design-gallery img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .design-gallery img.selected {
+            border: 2px solid blue;
         }
 
         button {
@@ -75,51 +95,57 @@
             <label for="phone">मोबाइल नंबर:</label>
             <input type="tel" id="phone" required>
 
-            <label for="design">डिज़ाइन का नाम:</label>
-            <input type="text" id="design" required>
-
             <label for="quantity">संख्या:</label>
             <input type="number" id="quantity" min="1" required>
 
             <label for="message">अतिरिक्त विवरण (Optional):</label>
             <textarea id="message" rows="3"></textarea>
 
-            <label for="file">डिज़ाइन फ़ाइल अपलोड करें:</label>
-            <input type="file" id="file" accept="image/*,.pdf">
+            <label>डिज़ाइन चुनें:</label>
+            <div class="design-gallery" id="designGallery">
+                <img src="a1.jpg" data-url="/mnt/data/a1.jpg" onclick="selectDesign(this)">
+                <img src="b1.jpg" data-url="/mnt/data/b1.jpg" onclick="selectDesign(this)">
+                <img src="c1.jpg" data-url="/mnt/data/c1.jpg" onclick="selectDesign(this)">
+                <img src="disign1.jpeg" data-url="/mnt/data/disign1.jpeg" onclick="selectDesign(this)">
+                <img src="download (1).jpeg" data-url="/mnt/data/download (1).jpeg" onclick="selectDesign(this)">
+                <img src="/mnt/data/download (2).jpeg" data-url="/mnt/data/download (2).jpeg" onclick="selectDesign(this)">
+                <img src="/mnt/data/download (3).jpeg" data-url="/mnt/data/download (3).jpeg" onclick="selectDesign(this)">
+                <img src="/mnt/data/download.jpeg" data-url="/mnt/data/download.jpeg" onclick="selectDesign(this)">
+                <img src="/mnt/data/image.png" data-url="/mnt/data/image.png" onclick="selectDesign(this)">
+                <img src="/mnt/data/logo1.PNG" data-url="/mnt/data/logo1.PNG" onclick="selectDesign(this)">
+            </div>
 
             <button type="submit">ऑर्डर भेजें</button>
         </form>
     </section>
 
     <script>
+        let selectedDesign = "";
+
+        function selectDesign(imgElement) {
+            document.querySelectorAll(".design-gallery img").forEach(img => img.classList.remove("selected"));
+            imgElement.classList.add("selected");
+            selectedDesign = imgElement.getAttribute("data-url");
+        }
+
         document.getElementById("orderForm").addEventListener("submit", function(event) {
             event.preventDefault(); 
 
             let name = document.getElementById("name").value;
             let phone = document.getElementById("phone").value;
-            let design = document.getElementById("design").value;
             let quantity = document.getElementById("quantity").value;
             let message = document.getElementById("message").value;
-            let fileInput = document.getElementById("file");
-            let file = fileInput.files[0];
 
-            if (!file) {
-                alert("कृपया एक डिज़ाइन फ़ाइल अपलोड करें!");
+            if (!selectedDesign) {
+                alert("कृपया कोई डिज़ाइन चुनें!");
                 return;
             }
 
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                let fileURL = e.target.result;
+            let whatsappMessage = `*ऑर्डर विवरण:*%0A👤 *नाम:* ${name}%0A📞 *मोबाइल:* ${phone}%0A🔢 *संख्या:* ${quantity}%0A📝 *विवरण:* ${message}%0A🖼️ *डिज़ाइन:* ${selectedDesign}`;
 
-                let whatsappMessage = `*ऑर्डर विवरण:*%0A👤 *नाम:* ${name}%0A📞 *मोबाइल:* ${phone}%0A🎨 *डिज़ाइन:* ${design}%0A🔢 *संख्या:* ${quantity}%0A📝 *विवरण:* ${message}%0A📂 *फ़ाइल:* ${fileURL}`;
-
-                let whatsappURL = `https://api.whatsapp.com/send?phone=918905730102&text=${whatsappMessage}`;
-                
-                window.open(whatsappURL, "_blank");
-            };
-
-            reader.readAsDataURL(file);
+            let whatsappURL = `https://api.whatsapp.com/send?phone=918905730102&text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, "_blank");
         });
     </script>
 
