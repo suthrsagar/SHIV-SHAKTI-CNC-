@@ -4,46 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiv Shakti CNC - Order Now</title>
+    <link rel="icon" href="logo1.PNG" type="image/x-icon">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #d1d5db);
             margin: 0;
             padding: 0;
-            text-align: center;
-        }
-
-        h2 {
-            color: #333;
-            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         #order {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            width: 90%;
+            border-radius: 12px;
+            width: 95%;
             max-width: 400px;
-            margin: auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 1.8em;
         }
 
         form {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
         label {
             text-align: left;
-            margin-top: 10px;
             font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
         }
 
         input, select, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            width: 95%;
+            font-size: 1em;
+            margin-top: 5px;
         }
 
         .design-gallery {
@@ -51,30 +59,38 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .design-gallery img {
             width: 80px;
             height: 80px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        .design-gallery img:hover {
+            transform: scale(1.1);
         }
 
         .design-gallery img.selected {
-            border: 2px solid blue;
+            border: 3px solid #007bff;
         }
 
         button {
             margin-top: 15px;
             background: #007bff;
             color: white;
-            padding: 10px;
+            padding: 14px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s;
+            width: 100%;
         }
 
         button:hover {
@@ -83,36 +99,37 @@
     </style>
 </head>
 <body>
-
-    <h2>⚡ ऑर्डर करें - शिव शक्ति CNC</h2>
-
     <section id="order">
+        <h2>⚡ ऑर्डर करें - शिव शक्ति CNC</h2>
         <p>कृपया नीचे अपना विवरण भरें:</p>
         <form id="orderForm">
             <label for="name">नाम:</label>
             <input type="text" id="name" required>
 
             <label for="phone">मोबाइल नंबर:</label>
-            <input type="tel" id="phone" required>
+            <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" required>
 
             <label for="quantity">संख्या:</label>
-            <input type="number" id="quantity" min="1" required>
+            <input type="number" id="quantity" min="1" max="5" required>
 
-            <label for="message">अतिरिक्त विवरण (Optional):</label>
-            <textarea id="message" rows="3"></textarea>
-
-            <label>डिज़ाइन चुनें:</label>
-            <div class="design-gallery" id="designGallery">
-                <img src="a1.jpg" data-url="/mnt/data/a1.jpg" onclick="selectDesign(this)">
-                <img src="b1.jpg" data-url="/mnt/data/b1.jpg" onclick="selectDesign(this)">
-                <img src="c1.jpg" data-url="/mnt/data/c1.jpg" onclick="selectDesign(this)">
-                <img src="disign1.jpeg" data-url="/mnt/data/disign1.jpeg" onclick="selectDesign(this)">
-                <img src="download (1).jpeg" data-url="/mnt/data/download (1).jpeg" onclick="selectDesign(this)">
-                <img src="/mnt/data/download (2).jpeg" data-url="/mnt/data/download (2).jpeg" onclick="selectDesign(this)">
-                <img src="/mnt/data/download (3).jpeg" data-url="/mnt/data/download (3).jpeg" onclick="selectDesign(this)">
-                <img src="/mnt/data/download.jpeg" data-url="/mnt/data/download.jpeg" onclick="selectDesign(this)">
-                <img src="/mnt/data/image.png" data-url="/mnt/data/image.png" onclick="selectDesign(this)">
-                <img src="/mnt/data/logo1.PNG" data-url="/mnt/data/logo1.PNG" onclick="selectDesign(this)">
+            <label>डिज़ाइन चुनें (सिर्फ 1):</label>
+            <div class="design-gallery">
+                <img src="a1.jpg" data-url="https://imgur.com/a/eaTqK2Xg" onclick="selectDesign(this)">
+                <img src="b1.jpg" data-url="https://imgur.com/a/eaTqK2X" onclick="selectDesign(this)">
+                <img src="c1.jpg" data-url="https://imgur.com/a/eaTqK2X" onclick="selectDesign(this)">
+                <img src="WhatsApp 2.jpg" data-url="https://imgur.com/a/eaTqK2X" onclick="selectDesign(this)">
+                <img src="WhatsApp 1.jpg" data-url="https://imgur.com/a/J96jwsH" onclick="selectDesign(this)">
+                <img src="WhatsApp 2.jpg" data-url="https://imgur.com/a/eaTqK2X" onclick="selectDesign(this)">
+                <img src="WhatsApp3.jpg" data-url="https://imgur.com/a/8nIABoc" onclick="selectDesign(this)">
+                <img src="WhatsApp3.jpg" data-url="https://imgur.com/a/8nIABoc" onclick="selectDesign(this)">\ <img src="a1.jpg" data-url="a1.jpg" onclick="selectDesign(this)">
+                <img src="WhatsApp4.jpg" data-url="https://imgur.com/a/euOwwOH" onclick="selectDesign(this)">
+                <img src="WhatsApp5.jpg" data-url="https://imgur.com/a/clMiy4h" onclick="selectDesign(this)">
+                <img src="WhatsApp6.jpg" data-url="https://imgur.com/undefined" onclick="selectDesign(this)">
+                <img src="WhatsApp7.jpg" data-url="https://imgur.com/a/IaQlRr3" onclick="selectDesign(this)">
+                <img src="WhatsApp8.jpg" data-url="https://imgur.com/a/InpkOa2" onclick="selectDesign(this)">
+                <img src="WhatsApp9.jpg" data-url="https://imgur.com/a/J3kJArc" onclick="selectDesign(this)">
+                <img src="WhatsApp8.jpg" data-url="https://imgur.com/a/InpkOa2" onclick="selectDesign(this)">
+           
             </div>
 
             <button type="submit">ऑर्डर भेजें</button>
@@ -120,34 +137,42 @@
     </section>
 
     <script>
-        let selectedDesign = "";
+        let selectedDesign = null; // सिर्फ एक डिज़ाइन स्टोर करने के लिए
 
         function selectDesign(imgElement) {
-            document.querySelectorAll(".design-gallery img").forEach(img => img.classList.remove("selected"));
+            if (selectedDesign) {
+                selectedDesign.classList.remove("selected"); // पहले वाली डिज़ाइन हटाएं
+            }
+
             imgElement.classList.add("selected");
-            selectedDesign = imgElement.getAttribute("data-url");
+            selectedDesign = imgElement; // नई डिज़ाइन को स्टोर करें
+
+            console.log("चयनित डिज़ाइन:", selectedDesign.getAttribute("data-url"));
         }
 
         document.getElementById("orderForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
             let name = document.getElementById("name").value;
             let phone = document.getElementById("phone").value;
             let quantity = document.getElementById("quantity").value;
-            let message = document.getElementById("message").value;
 
-            if (!selectedDesign) {
-                alert("कृपया कोई डिज़ाइन चुनें!");
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert("कृपया 10 अंकों का वैध मोबाइल नंबर दर्ज करें!");
                 return;
             }
 
-            let whatsappMessage = `*ऑर्डर विवरण:*%0A👤 *नाम:* ${name}%0A📞 *मोबाइल:* ${phone}%0A🔢 *संख्या:* ${quantity}%0A📝 *विवरण:* ${message}%0A🖼️ *डिज़ाइन:* ${selectedDesign}`;
+            if (!selectedDesign) {
+                alert("कृपया एक डिज़ाइन चुनें!");
+                return;
+            }
+
+            let selectedImageUrl = selectedDesign.getAttribute("data-url");
+            let whatsappMessage = `*ऑर्डर विवरण:*%0A👤 *नाम:* ${name}%0A📞 *मोबाइल:* ${phone}%0A🔢 *संख्या:* ${quantity}%0A🖼️ *डिज़ाइन:* ${selectedImageUrl}`;
 
             let whatsappURL = `https://api.whatsapp.com/send?phone=918905730102&text=${whatsappMessage}`;
-            
             window.open(whatsappURL, "_blank");
         });
     </script>
-
 </body>
 </html>
